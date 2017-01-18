@@ -1,0 +1,25 @@
+<ion-view view-title="{{chat.name}}">
+  <ion-content class="padding single-page-content"> 
+
+    <div layout-gt-xs="row">
+		<md-input-container class="md-block" flex-gt-xs>
+			<label>Title</label>
+			<input value="{{article.title}}" ng-disabled="!disableInp" ng-model="article.title">
+		</md-input-container> 
+	</div>
+    <div layout-gt-xs="row">
+		<md-input-container class="md-block" flex-gt-xs>
+			<label>Content</label>
+			<textarea value="{{article.post}}" ng-model="article.post" ng-disabled="!disableInp" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+		</md-input-container>
+    </div>     
+	<md-button class="md-raised" ng-click="editPost()" ng-hide="disableInp">Edit</md-button>
+	<md-button class="md-raised md-primary" ng-hide="!disableInp" ng-click="updatePost()">Update</md-button> 
+	<md-button class="md-raised md-warn">Delete</md-button> 
+     
+	<p ng-show="updateMsg">updating...</p>
+	<p>{{updatedMsg}}</p>
+
+
+  </ion-content>
+</ion-view>
